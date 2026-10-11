@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "x402 Compute Provisioning job status",
+  "type": "object",
+  "properties": {
+    "status": { "type": "string" },
+    "ready": { "type": "boolean" },
+    "ready_at": { "type": "string", "format": "date-time" },
+    "ended_at": { "type": "string", "format": "date-time" },
+    "runtime_seconds": { "type": "number", "minimum": 0 }
+  },
+  "required": ["status", "ready"]
+}

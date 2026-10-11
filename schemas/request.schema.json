@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "x402 Compute Provisioning request",
+  "type": "object",
+  "properties": {
+    "gpu_type": { "type": "string" },
+    "card_count": { "type": "integer", "minimum": 1, "maximum": 16 },
+    "duration_seconds": { "type": "number", "minimum": 60, "maximum": 86400 },
+    "routing_policy": { "type": "string", "enum": ["lowest_cost", "lowest_latency", "zero_quota"] },
+    "workload_type": { "type": "string", "enum": ["agent_exec", "fine_tune", "batch_inference"] }
+  },
+  "required": ["gpu_type", "card_count", "duration_seconds"],
+  "additionalProperties": false
+}
