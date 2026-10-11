@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "x402 Compute Provisioning error",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "string",
+      "enum": ["invalid_json", "unknown_gpu_type", "size_not_available", "wrong_payment_header",
+               "price_changed", "insufficient_funds_or_invalid_signature", "payment_already_used",
+               "sanctions_screening", "sanctions_screening_failed", "unsupported_media_type",
+               "rate_limited", "no_capacity"]
+    },
+    "message": { "type": "string" },
+    "transaction_hash": { "type": "string", "pattern": "^0x[0-9a-fA-F]{64}$" },
+    "job_id": { "type": "string", "maxLength": 128 }
+  },
+  "required": ["error"]
+}
